@@ -1,0 +1,12 @@
+# Redshift Spectrum
+data/*.parq
+result
+
+# Terraform
+.terraform
+.terraform.lock.hcl
+terraform.tfstate
+terraform.tfstate.backup
+
+# VSCode
+.vscode
