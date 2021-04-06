@@ -85,6 +85,12 @@ $ cat result
 (4 rows)
 ```
 
+You have to delete AWS resources if the verification was completed.
+
+```sh
+$ terraform destroy
+```
+
 ## Author
 
 Inseo Kim
