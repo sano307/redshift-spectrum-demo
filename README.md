@@ -14,6 +14,14 @@ How to get the `parquet` data in S3 via Redshift Spectrum based on the Glue Tabl
 
 ## Usage
 
+First of all, change the S3 bucket name what to store the `parquet` data.
+
+```diff
+// terraform.tfvars
+- s3_bucket_parquet = "redshift-spectrum-demo"
++ s3_bucket_parquet = "YOUR_BUCKET_NAME"
+```
+
 Check the necessary infra resources and deploy to AWS cloud.
 
 ```sh
@@ -27,7 +35,7 @@ Create the parquet data for testing, and upload this to S3 bucket.
 $ cd utils
 $ pipenv install --dev
 $ pipenv run python generate_parquet.py
-$ aws s3 cp ../data/sample.parq s3://redshift-spectrum-demo/parquet/
+$ aws s3 cp ../data/sample.parq s3://YOUR_BUCKET_NAME/parquet/
 ```
 
 Check the endpoint and port of Redshift Cluster, and try to access Redshift Cluster using `psql` command.
