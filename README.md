@@ -25,6 +25,7 @@ First of all, change the S3 bucket name what to store the `parquet` data.
 Check the necessary infra resources and deploy to AWS cloud.
 
 ```sh
+$ terraform init
 $ terraform plan
 $ terraform apply
 ```
@@ -33,6 +34,7 @@ Create the parquet data for testing, and upload this to S3 bucket.
 
 ```sh
 $ cd utils
+$ pipenv --python 3.8.7
 $ pipenv install --dev
 $ pipenv run python generate_parquet.py
 $ aws s3 cp ../data/sample.parq s3://YOUR_BUCKET_NAME/parquet/
